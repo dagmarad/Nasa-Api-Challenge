@@ -1,0 +1,20 @@
+
+function insertPhotos(photos){
+  for(let i=0; i<photos.length; i++){
+    let li = $('<li>', {class:"url"});
+    let h3 = $('<h3>').text(photos[i].title);
+    li.append(h3);
+    gallery.append(li);
+  }
+}
+function loadNasaPhoto() {
+       $.ajax({
+           url: urlNasa
+       }).done(function(response){
+       insertPhotos(response.results);
+      }).fail(function(error) {
+          console.log(error);
+      })
+ }
+
+ loadNasaPhoto();
