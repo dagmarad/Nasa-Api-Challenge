@@ -74,13 +74,17 @@ $(function () {
 
   console.log("nasa api ch");
 
-  var urlNasa = "https://api.nasa.gov/planetary/apod?api_key=oWe4gdwdmS0UnFJ3FuMrO1sK6NaZTxDZoyf0rKTY";
+  var date = function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+  var year = date(1990, 2017);
+  var month = date(1, 12);
+  var day = date(1, 30);
+
+  var urlNasa = "https://api.nasa.gov/planetary/apod?api_key=oWe4gdwdmS0UnFJ3FuMrO1sK6NaZTxDZoyf0rKTY" + "&date=" + year + "-" + month + "-" + day;
+  console.log(urlNasa);
   var gallery = $('.gallery__list');
-  console.log(gallery);
   var listGallery = $('li');
-  console.log(listGallery);
-  var title = $('h3');
-  console.log(title);
 
   function loadPhoto() {
     $.ajax({
@@ -92,6 +96,7 @@ $(function () {
       console.log(error);
     });
   }
+
   loadPhoto();
 });
 

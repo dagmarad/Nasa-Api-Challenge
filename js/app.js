@@ -2,13 +2,18 @@ $(function(){
 
 console.log("nasa api ch");
 
-let urlNasa="https://api.nasa.gov/planetary/apod?api_key=oWe4gdwdmS0UnFJ3FuMrO1sK6NaZTxDZoyf0rKTY";
+var date = function getRandomInt(min,max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+var year = date(1990,2017);
+var month = date(1,12);
+var day = date(1,30);
+
+let urlNasa="https://api.nasa.gov/planetary/apod?api_key=oWe4gdwdmS0UnFJ3FuMrO1sK6NaZTxDZoyf0rKTY"+"&date="+year+"-"+month+"-"+day;
+console.log(urlNasa);
 let gallery=$('.gallery__list');
-console.log(gallery);
 let listGallery=$('li');
-console.log(listGallery);
-let title=$('h3');
-console.log(title)
+
 
 function loadPhoto(){
   $.ajax({
@@ -20,8 +25,8 @@ function loadPhoto(){
     console.log(error)
   })
 }
-loadPhoto();
 
+loadPhoto();
 
 
 
