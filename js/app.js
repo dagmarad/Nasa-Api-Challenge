@@ -18,7 +18,7 @@ $(function(){
       })
     }
 
-    let year = date(2000,2016);
+    let year = date(2010,2016);
     let month = date(1,12);
     let day = date(1,28);
     let urlNasa="https://api.nasa.gov/planetary/apod?api_key=oWe4gdwdmS0UnFJ3FuMrO1sK6NaZTxDZoyf0rKTY"+"&date="+year+"-"+month+"-"+day;
