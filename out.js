@@ -81,7 +81,7 @@ $(function () {
       }).done(function (response) {
         if (response.media_type == 'image') {
           $(image).find('p').text(response.title);
-          $(image).find('img').attr('src', response.url);
+          $(image).css('background-image', 'url(' + response.url + ')');
         } else {
           loadRandomImage(image);
         }
@@ -89,7 +89,8 @@ $(function () {
         console.log(error);
       });
     }
-    var year = date(1996, 2016);
+
+    var year = date(2000, 2016);
     var month = date(1, 12);
     var day = date(1, 28);
     var urlNasa = "https://api.nasa.gov/planetary/apod?api_key=oWe4gdwdmS0UnFJ3FuMrO1sK6NaZTxDZoyf0rKTY" + "&date=" + year + "-" + month + "-" + day;
