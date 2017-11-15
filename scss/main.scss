@@ -26,3 +26,9 @@ img{
 .next, .previous{
   cursor: pointer;
 }
+.slider li{
+  display:none;
+  &.visible{
+    display:inline-block;
+ }
+}
